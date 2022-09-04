@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="article-entry">
+    <h2>{{ object.title }}</h2>
+    <p>by {{ object.author }} | {{ object.date }}</p>
+    <p>{{ object.body }}</p>
+    </div>
+
+    <p><a href="{% url 'article_edit' article.pk %}">
+        <button class="btn btn-primary btn-lg" type="submit">Edit</button></a> |
+    <a href="{% url 'article_delete' article.pk %}">
+        <button class="btn btn-primary btn-lg" type="submit">Delete</button></a> |
+    <a href="{% url 'add_comment' article.pk %}">
+        <button class="btn btn-primary btn-lg" type="submit">Comment</button>
+    </a>
+    </p>
+    <p><a href="{% url 'article_list' %}"><button class="btn btn-primary btn-lg" type="submit">All Articles</button></a>.</p>
+    
+{% endblock content %}
