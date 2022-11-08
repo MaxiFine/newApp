@@ -11,6 +11,11 @@ class ArticleListView(LoginRequiredMixin, ListView):
     model = Article
     template_name = 'article_list.html'
 
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user.get_username()
+        return super().form_valid(form)
+
 class ArticleDetailView(LoginRequiredMixin, DetailView): # new
     model = Article
     template_name = 'article_detail.html'

@@ -14,4 +14,5 @@ urlpatterns = [
     path('<int:pk>/', ArticleDetailView.as_view(), name='article_detail'), 
     path('<int:pk>/delete/', ArticleDeleteView.as_view(), name='article_delete'),
     path('<int:article_id>/comment/', ArticleCommentView.as_view(), name='add_comment'), # Commenting on the template...
+    
 ]
