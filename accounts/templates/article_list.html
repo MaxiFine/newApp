@@ -30,11 +30,15 @@
                 
             {% for comment in article.comments.all %}
                 <p>
-                <span class="font-weight-bold">
-                by {{ comment.author }} on {{article.date}} &middot;
-                </span>
+               
                 {{ comment }} 
                 </p>
+                {% if comment %}
+                <div class="card-footer text-center text-muted" >
+                    <a href="">Edit</a> | 
+                    <a href="">Delete</a>
+                </div>
+                {% else %}
 
             {% endfor %}
         </div>

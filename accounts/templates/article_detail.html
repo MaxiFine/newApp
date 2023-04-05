@@ -8,12 +8,9 @@
     <p>{{ object.body }}</p>
     </div>
 
-    <p><a href="{% url 'article_edit' article.pk %}">
-        <button class="btn btn-primary btn-lg" type="submit">Edit</button></a> |
-    <a href="{% url 'article_delete' article.pk %}">
-        <button class="btn btn-primary btn-lg" type="submit">Delete</button></a> |
-    <a href="{% url 'add_comment' article.pk %}">
-        <button class="btn btn-primary btn-lg" type="submit">Comment</button>
+    <p><a href="{% url 'article_edit' article.pk %}">Edit</a> |
+    <a href="{% url 'article_delete' article.pk %}">Delete</a> |
+    <a href="{% url 'add_comment' article.pk %}">Comment
     </a>
     </p>
     <p><a href="{% url 'article_list' %}"><button class="btn btn-primary btn-lg" type="submit">All Articles</button></a>.</p>
